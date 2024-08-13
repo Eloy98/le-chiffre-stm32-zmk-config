@@ -17,4 +17,19 @@ config ZMK_USB
 config ZMK_KSCAN_MATRIX_POLLING
     default y
 
+
+if ZMK_STUDIO
+
+choice ZMK_BEHAVIOR_LOCAL_ID_TYPE
+	default ZMK_BEHAVIOR_LOCAL_ID_TYPE_CRC16
+endchoice 
+
+config ZMK_STUDIO_RPC_THREAD_STACK_SIZE
+    default 3800
+
+config ZMK_STUDIO_RPC_TX_BUF_SIZE
+    default 32
+
+endif
+
 endif # BOARD_LE_CHIFFRE_STM32
